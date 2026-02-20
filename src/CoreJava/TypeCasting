@@ -1,0 +1,38 @@
+Typecasting : convert variable from one type to another type
+
+Primitive type casting:
+1. Widening Casting (automatically) / implicit - converting a smaller type to a larger type size
+    byte -> short -> char -> int -> long -> float -> double
+
+2. Narrowing Casting (manually) / explicit - converting a larger type to a smaller size type, must place the type in parentheses () in front of the value.
+   int myInt = (int) myDouble;
+
+Object type casting: through inheritance
+1. Upcasting (automatically) / implicit - converting a subclass type to a superclass type
+   Dog myDog = new Dog();
+   Animal myAnimal = myDog;
+
+2. Downcasting (manually) / explicit - converting a superclass type to a subclass type, must place the type in parentheses () in front of the value.
+    Animal a = new Dog();
+    Dog d = (Dog) a;
+Note: Can throw ClassCastException, check with instanceof before downcasting
+    if (a instanceof Dog) {
+        Dog d = (Dog) a;
+    } else {
+        System.out.println("a is not an instance of Dog");
+    }
+
+
+Type Promotion in Java:
+automatic conversion of smaller data types into a larger data type during arithmetic expressions.
+
+byte  →
+short →  promoted to int
+char  →
+
+Example : byte a = 10;
+          byte b = 20;
+          int c = a + b;   // Result is int
+
+If one operand is larger, result becomes the larger type
+

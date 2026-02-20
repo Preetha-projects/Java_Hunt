@@ -1,0 +1,43 @@
+
+The Two Pointer Technique is a problem-solving approach where two variables (pointers) are used to traverse or process data (usually arrays or strings) at the same time.
+optimized way instead of using nested loops.
+
+Using two indexes/pointers that usually: Start from different positions and Move toward each other OR move at different speeds
+
+Why We Use It
+
+👉 To reduce time complexity
+👉 To avoid nested loops
+👉 To improve performance
+
+Converts : O(n²) → O(n)
+
+1. Opposite Direction Pointers
+ Used in:
+
+    Reverse array
+
+    Palindrome checking
+
+    Pair sum in sorted array
+
+2. Same Direction Pointers
+
+ Used in:
+
+    Remove duplicates
+
+    Move zeros
+
+    Partition problems
+
+
+| Situation             | Use           |
+| --------------------- | ------------- |
+| Traversing array/list | `for`         |
+| Known iteration count | `for`         |
+| Two pointer problems  | `while`       |
+| Condition based loops | `while`       |
+| Input loops           | `while`       |
+| Infinite loops        | `while(true)` |
+

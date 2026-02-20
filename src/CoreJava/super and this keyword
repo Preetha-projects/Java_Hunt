@@ -1,0 +1,69 @@
+========================================
+        this & super in Java
+========================================
+
+1️⃣ WHAT IS `this`?
+
+- Refers to the CURRENT object.
+- Used to access current class variables, methods, or constructors.
+
+Common Use Case:
+When instance variable name and constructor parameter name are SAME.
+
+Example:
+    this.name = name;
+
+Here:
+    this.name → instance variable (in heap)
+    name      → constructor parameter (in stack)
+
+Rule:
+If parameter name and instance variable name are same → use `this`.
+
+
+OPTIONAL: this is optional when calling methods inside the same class.
+
+It becomes necessary when:
+    1.Variable name conflict
+    2.Passing current object
+    3.Calling another constructor (this())
+
+----------------------------------------
+
+
+3️⃣ Difference Between `this` and `super`
+
+| Keyword | Refers To       | Used For                                   | Used Where           |
+|----------|----------------|--------------------------------------------|--------------------  |
+| this     | Current object | Access current class variables/methods     |Inside same class     |
+| super    | Parent object  | Access parent class variables/methods      |Inside subclass only  | If there is no inheritance, super has no meaning.
+
+
+️WHAT IS `super`?
+        - Refers to the PARENT class object.
+        - Used to:
+        super() → calls parent constructor.
+        super.display() → Access parent class methods
+        super.name → Access parent class variables
+
+
+When is super() mandatory? ONLY when the parent class does NOT have a no-argument constructor.
+Reason:
+1.Parent constructor must execute first.
+2.If no default constructor exists, we must call it explicitly.
+
+
+You Cannot Use It:
+ `super`                                        |    `this`
+--------------------------------------------------------------------------------
+• In a class that doesn’t extend another class  | • Inside static methods
+• Outside a class                               | • Outside a class
+• In static context                             | • Without an object context
+
+
+
+
+
+
+
+

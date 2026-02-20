@@ -1,0 +1,6 @@
+The Pattern class compiles regex strings into pattern objects
+Use matcher() on a Pattern to perform matches.
+Pattern.matches() validates the whole string, while Matcher.find() searches for multiple occurrences.
+
+Ternary operator syntax:
+variable = (condition) ? expressionTrue :  expressionFalse;
