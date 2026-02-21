@@ -1,0 +1,36 @@
+Acts as the root of all Java classes, i.e. Every class implicitly extends Object.
+
+Example: Car car = new Car();
+
+        car → reference variable
+        new Car() → actual object in heap
+        car stores memory address
+
+What happens internally:
+    -Memory allocated in heap
+    -Constructor is called
+    -Reference stored in variable
+
+Important Object Class Methods:
+
+| Method               | Purpose                       |
+| -------------------- | ----------------------------- |
+| `toString()`         | String representation         |
+| `equals(Object obj)` | Compare objects               |
+| `hashCode()`         | Hash value                    |
+| `clone()`            | Copy object                   |
+| `getClass()`         | Returns class metadata        |
+| `finalize()`         | Called before GC (deprecated) |
+| `wait()`             | Thread communication          |
+| `notify()`           | Thread communication          |
+| `notifyAll()`        | Thread communication          |
+
+
+Default Behavior of Object Methods
+If you don’t override:
+
+| Method     | Default Behavior     |
+| ---------- | -------------------- |
+| equals()   | Reference comparison |
+| hashCode() | Based on memory      |
+| toString() | ClassName@hash       |

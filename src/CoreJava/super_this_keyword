@@ -4,7 +4,7 @@
 
 1️⃣ WHAT IS `this`?
 
-- Refers to the CURRENT object.
+- Refers to the CURRENT object. 'this' holds the reference (memory address) of the current object.
 - Used to access current class variables, methods, or constructors.
 
 Common Use Case:
