@@ -6,9 +6,21 @@ package CoreJava;
  Non-static methods are polymorphic → resolved at runtime based on object type.
  Static methods are bound at compile time → resolved using reference type, even if the object is of subclass.
  Static variables/methods belong to the class, not the object.
+
  Reference type vs object type matters:
-       Reference type → decides fields/variables and static members at compile time
-       Object type    → decides instance method execution at runtime ---- */
+       Reference type → decides fields/Instance or non-static variables and static members at compile time
+       Object type    → decides instance method, constructors execution at runtime
+
+        Instance variables are created at runtime inside the object, but they are accessed based on the reference type at compile time.
+        Unlike methods, variables do not support runtime polymorphism in Java.
+
+| Compile Time               | Runtime                       |
+| -------------------------- | ----------------------------- |
+| Code checking              | Code execution                |
+| Done by compiler           | Done by JVM                   |
+| Detects syntax/type errors | Allocates memory & runs logic |
+
+ */
 
 public class CompileVsRuntime {
 

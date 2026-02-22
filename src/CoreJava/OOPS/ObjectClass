@@ -9,7 +9,14 @@ Example: Car car = new Car();
 What happens internally:
     -Memory allocated in heap
     -Constructor is called
-    -Reference stored in variable
+           When constructor runs:
+              -A new stack frame is created in the Stack memory
+              -Constructor code executes there
+              -this refers to the heap object
+           After constructor finishes:
+               -Stack frame is destroyed
+               -Object remains in Heap
+   -Reference stored in variable - Stack memory
 
 Important Object Class Methods:
 

@@ -62,11 +62,11 @@ public class StringsRelated {
         System.out.println(var0);
 
         // "==" compares the references of the objects
-        if(var0 == var1); // condition is true because both references point to same object in string pool
+        System.out.println("var0 == var1 " + (var0 == var1)); // condition is true because no duplicates in string pool both references point to same object in string pool
 
         String var2 = new String("Happy"); //new obj is created in heap memory
         String var3 = new String("Happy"); //new obj is created in heap memory
-        if(var2 == var3); // condition is false because both references point to different objects in heap memory
+        System.out.println("var2 == var3 " +(var2 == var3)); // condition is false because both references point to different objects in heap memory
 
         int num1 = 29;
         int num2 = 29;
@@ -78,14 +78,16 @@ public class StringsRelated {
         if(var4.equals(var5)); // condition is true because both objects have same content and equals() method compares content of the objects
         Objects.equals(var4, var5); // this is another way to compare content of the objects
 
+        //the literal "Hello" must still be stored in the pool because all literals are pooled automatically.
+        // The new keyword simply creates an additional heap object.
         String obj1 = new String("HelloWorld"); //obj1 points to the heap object, not the pool.
         String obj2 = new String("Hello");
-        obj2+= "World"; // it did not point to obj1 because obj2 is mutable as it calls StringBuilder behind the scenes
+        obj2+= "World"; //  obj2 is mutable as it calls StringBuilder behind the scenes and "Hello" in heap is modified to "HelloWorld" and obj2 points to it, but original "Hello" in pool is still there until garbage collected.
         obj2 = new StringBuilder(obj2)  //internally
                 .append("World")
                 .toString();
         System.out.println(obj1.equals(obj2)); // true because both obj and obj2 have same content "HelloWorld"
-        System.out.println(obj1 == obj2); // false because obj1 and obj2 are different objects in memory why because obj1 is in string pool and obj2 is in heap memory
+        System.out.println(obj1 == obj2); // false because obj1 and obj2 are different objects in memory
 
         int num3 = 21;
         int num4 = 21;

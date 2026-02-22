@@ -1,0 +1,52 @@
+Hashcode is the numeric representation of object to store and retrieve objects efficiently
+    commonly used by Hashmap, Hashset, Hashtable
+
+       Index →  0   1   2   3   4   5   6   7
+               ┌───┬───┬───┬───┬───┬───┬───┬───┐
+       Table → │   │ A │   │ C │   │ B │   │   │
+               └───┴───┴───┴───┴───┴───┴───┴───┘
+
+In general, Hashcode is to determine the bucket where the object should live in based on the index
+If two objects are equal according to equals(), then they MUST return the same hashCode().
+
+Rule of thumb:
+Equal Objects Must Have Equal Hash Codes
+       If a.equals(b) is true, then:
+         a.hashCode() == b.hashCode()
+       Otherwise, collections like HashMap and HashSet will not work correctly.
+
+Relationship Between equals() and hashCode():
+    | Condition             | Requirement                     |
+    | --------------------- | ------------------------------- |
+    | equals() overridden   | MUST override hashCode()        |
+    | hashCode() overridden | equals() SHOULD be overridden   |
+    | Objects equal         | hashCodes must match            |
+    | hashCodes same        | equals() may or may not be true |
+
+By default:
+    equals() → compares memory reference
+    hashCode() → based on memory address
+Both are consistent with each other.
+
+Why override hashCode when overriding equals??
+    👉 If two objects are equal according to equals(),
+    👉 They must behave as equal everywhere — especially in collections.
+    We override both to maintain consistency between equality logic and hashing logic,
+     so that hash-based collections like HashMap and HashSet work correctly.
+
+    For collection-based - hashcode never works alone, it works along with the equals()
+    If hashCode() is overridden correctly:
+     👉 Same data = Same hashCode = Same bucket
+        - Hashcode - determine the bucket
+        - equals() - checks if the KEY is already exits in the bucket
+
+    Inconsistent hashCode and equals can lead to unexpected behavior (like storing duplicates) in collections like HashSet and HashMap:
+    Because:
+    Step 1 → HashSet checks hashCode
+    Step 2 → If same bucket, then equals() runs
+
+    Since hashCodes are different:
+            They go into different buckets
+            equals() is NEVER checked
+            Both get stored
+            Even though equals() says they are equal.

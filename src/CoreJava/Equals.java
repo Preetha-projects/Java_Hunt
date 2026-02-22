@@ -1,4 +1,7 @@
 package CoreJava;
+
+import java.util.Objects;
+
 /*
 By default:
       equals() compares memory references, not content. behaves like "=="
@@ -36,12 +39,12 @@ public class Equals{
 
             @Override
                 public boolean equals(Object obj) {
-                    if (this == obj) return true;
-                    if (obj == null) return false;
-                    if (getClass() != obj.getClass()) return false;
+                    if (this == obj) return true;    //Fast check for same object
+                    if (obj == null) return false;   //Avoid NullPointerException
+                    if (getClass() != obj.getClass()) return false;   //Ensure same type
                     Employee other = (Employee) obj;
                     return id == other.id &&
-                           Objects.equals(name, other.name);
+                           Objects.equals(name, other.name);   //Define logical equality
                  }
 
 

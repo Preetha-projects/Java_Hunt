@@ -31,6 +31,8 @@ Memory model:
 
 */
 
+import java.net.Proxy;
+
 public class WrapperClass {
 
     public static void main(String[] args) {

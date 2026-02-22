@@ -6,15 +6,11 @@ public class ThisKeyword {
     public static void main(String[] args)
     {
         StudentWithThis s = new StudentWithThis();
-        System.out.println("s.name = " + s.name); // Output: s.name = Rhea
+        //s.name= outerVariable; // Accessing static variable directly
+        System.out.println("s.name = " + s.name ); // Output: s.name = Rhea
 
         StudentWithoutThis s2 = new StudentWithoutThis("Rhea");
         System.out.println("s2.name= " + s2.name); // Output: null
-
-        double myNum = 5.75d;
-        System.out.println(myNum);
-
-
     };
 }
 
@@ -28,6 +24,7 @@ public class ThisKeyword {
 
         StudentWithThis() {
             this("Payal");    // Calls the parameterized constructor with "Payal"
+            //constructor sets initial value s.name= Payal, then we can reassign it to Rhea in main method.
         }
     }
     /*
