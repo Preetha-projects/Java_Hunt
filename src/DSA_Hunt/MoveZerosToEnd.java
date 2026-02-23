@@ -1,7 +1,6 @@
 package DSA_Hunt;
 
 //Time Complexity is O(n) because the array is traversed at most twice.
-//Even though there are two loops, complexity remains O(n) because constants are ignored in Big-O notation.
 import java.util.Arrays;
 
 /*
@@ -23,6 +22,7 @@ For each element in array:
 public class MoveZerosToEnd {
 
     public void moveZeros(int[] arr) {
+        //Two pointer technique: one pointer (index) to track the position of the next non-zero element, and another pointer (i) to traverse the array.
         int index = 0; // slow pointer for the position of the next non-zero element
 
         // Move non-zero elements forward
@@ -58,11 +58,12 @@ public class MoveZerosToEnd {
             newArr[index] = 0;
             index++;
         }
-
+        //Even though there are two loops, complexity remains O(n) because constants are ignored in Big-O notation.
         System.out.println("Without Modifying original array: " + Arrays.toString(newArr));
 
         MoveZerosToEnd obj = new MoveZerosToEnd();
         obj.moveZeros(arr);
+        //Space complexity is O(n)
         System.out.println("Modified original array: " + Arrays.toString(arr));
     }
 }
