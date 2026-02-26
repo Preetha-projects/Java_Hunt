@@ -1,4 +1,4 @@
-package DSA_Hunt.TwoPointer;
+package DSA_Hunt.Arrays.TwoPointer;
 
 public class FindPairOfDiff {
     public int[] findPair(int[] arr, int target) {

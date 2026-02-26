@@ -1,4 +1,4 @@
-package DSA_Hunt;
+package DSA_Hunt.Arrays.Traversal;
 
 public class ReplaceNegNum {
     public static int[] replaceNum(int[] arr) {

@@ -1,4 +1,4 @@
-package DSA_Hunt.TwoPointer;
+package DSA_Hunt.Arrays.TwoPointer;
 
 /*
 Use two pointers — one at the start and one at the end. Swap elements and move pointers toward the center.

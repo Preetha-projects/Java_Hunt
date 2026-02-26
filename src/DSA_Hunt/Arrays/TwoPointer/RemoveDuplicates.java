@@ -1,4 +1,4 @@
-package DSA_Hunt.TwoPointer;
+package DSA_Hunt.Arrays.TwoPointer;
 
 /*
 Keep first element

@@ -1,4 +1,4 @@
-package DSA_Hunt.TwoPointer;
+package DSA_Hunt.Arrays.TwoPointer;
 
 // time complexity: O(n + m)  -> Because each element is visited once.
 // space complexity: O(n + m) -> Because we create a new array of size n + m.

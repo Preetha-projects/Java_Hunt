@@ -1,0 +1,27 @@
+CLASS
+--------
+
+    access_modifier class class_name{
+      data members;
+      constructors;
+      methods;
+      ...;
+    }
+
+ → A class is a blueprint for creating objects.
+ → Each class has its methods and attributes that can be accessed and manipulated through the objects.
+ → A class contains mainly two things: Methods and Data Members.
+ → JVM stores Class structure in Method Area
+ → It follows all rules of OOPS concepts
+
+Does a class consume memory?
+   Yes. When loaded by JVM, class metadata is stored in the Method Area.
+   However, instance variables consume memory only when objects are created in the heap.
+
+Rules :
+-There can be only one public class per source file
+-The public class name should be the name of the source file
+-package statement should be the first statement in the source file
+-import statements are present, then they must be written between the package statement and the class declaration.
+
+

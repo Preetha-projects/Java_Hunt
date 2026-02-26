@@ -1,4 +1,4 @@
-package DSA_Hunt;
+package DSA_Hunt.Arrays.Traversal;
 
 /*
 Space complexity is about how memory grows with input size, NOT how many fixed variables exist.

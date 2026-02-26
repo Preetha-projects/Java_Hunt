@@ -1,6 +1,4 @@
-package DSA_Hunt;
-
-import DSA_Hunt.TwoPointer.ReverseArray;
+package DSA_Hunt.Arrays.Traversal;
 
 public class ReverseOrder {
     public static void main(String[] args) {

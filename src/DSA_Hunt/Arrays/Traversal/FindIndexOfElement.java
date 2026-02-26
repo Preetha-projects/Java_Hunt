@@ -1,4 +1,4 @@
-package DSA_Hunt;
+package DSA_Hunt.Arrays.Traversal;
 
 public class FindIndexOfElement {
     public static int indexOfElement(int[] arr, int ele){

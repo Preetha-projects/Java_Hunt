@@ -1,4 +1,4 @@
-package DSA_Hunt.TwoPointer;
+package DSA_Hunt.Arrays.TwoPointer;
 
 //Time complexity : O(n) where n is the number of elements in the array. This is because in the worst case, we may have to traverse the entire array once to find the pair that sums to the target.
 //Space complexity : O(1) because we are using only a constant amount of extra space to store the two pointers and the result.

@@ -1,0 +1,66 @@
+Kafka is a Distributed Streaming Platform
+
+Topics, as the name suggests, are the logical categories of messages in Kafka, a stream of the same type of data.
+
+When we split data of a topic into multiple streams, we call all of those smaller streams the “Partition” of that topic.
+Why partitions?
+
+        Parallelism
+
+        Scalability
+
+        Load distribution
+
+Each partition:
+
+        Is an append-only log
+
+        Maintains strict order
+
+Kafka is used when:
+
+    You need real-time processing
+    You handle large-scale data
+    You want decoupled microservices
+    You need fault tolerance
+
+Broker
+A broker is a single Kafka server.
+Brokers receive messages from producers, assigns offset to them, and then commit them to the partition log, which is basically writing data to disk, and this gives Kafka its durable nature.
+
+Producer → Broker → Topic (Partitions) → Consumer Group → Consumer
+
+
+Why Kafka instead of REST calls between microservices?
+
+Answer:
+
+    Decoupling
+
+    Asynchronous communication
+
+    Scalability
+
+    Event replay
+
+    Better fault tolerance
+
+
+                ┌──────────────┐
+                │   Producer   │
+                └──────┬───────┘
+                       │
+                       ▼
+              ┌──────────────────┐
+              │   Kafka Cluster  │
+              │ ┌──────────────┐ │
+              │ │   Broker 1   │ │
+              │ │   Broker 2   │ │
+              │ │   Broker 3   │ │
+              │ └──────────────┘ │
+              └─────────┬────────┘
+                        │
+                        ▼
+                ┌──────────────┐
+                │ Consumer Grp │
+                └──────────────┘

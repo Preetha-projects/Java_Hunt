@@ -1,4 +1,4 @@
-package DSA_Hunt;
+package DSA_Hunt.Arrays.TwoPointer;
 
 //Time Complexity is O(n) because the array is traversed at most twice.
 import java.util.Arrays;
