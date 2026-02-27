@@ -21,7 +21,7 @@ public class Encapsulation {
     //Fields are private
     private String username;
     private String pwd;
-    private int         age;
+    private int age;
 
     // Access through public methods
     // Validation logic present

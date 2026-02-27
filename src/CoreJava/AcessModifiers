@@ -1,0 +1,17 @@
+| Modifier              | Same Class | Same Package   | Child (Different Package) | Outside Package (Non-child) |
+| --------------------- | ---------- | -------------- | ------------------------- | --------------------------- |
+| `private`             | ✅          | ❌            | ❌                         | ❌                       |
+| `protected`           | ✅          | ✅            | ✅                         | ❌                       |
+| `public`              | ✅          | ✅            | ✅                         | ✅                       |
+| default (no modifier) | ✅          | ✅            | ❌                         | ❌                       |
+
+
+Private → Data hiding (strong encapsulation)
+    Used when you don’t want subclasses touching internal data.
+
+Protected → Designed for inheritance
+    Used when you want subclasses to reuse or modify behavior.
+    protected members cannot be accessed via parent object reference in a different package.
+    protected has two access paths:
+    1️⃣ Same package → behaves like default (package-private)
+    2️⃣ Different package → accessible only through inheritance

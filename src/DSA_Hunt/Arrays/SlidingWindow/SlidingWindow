@@ -1,0 +1,20 @@
+Sliding Window is a technique used to:
+
+Efficiently solve problems involving subarrays or substrings.
+It avoids recomputation by maintaining a window and adjusting its boundaries while iterating through the array.
+It reduces time complexity from O(n²) to O(n).
+
+hints:
+
+    “Subarray”
+    “Substring”
+    “Continuous”
+    “Largest / smallest sum”
+    “Maximum length”
+    “At most K…”`
+    “Exactly K…”
+
+Types of Sliding Window
+
+    1️⃣ Fixed Size Window
+    2️⃣ Variable Size Window

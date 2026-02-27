@@ -1,0 +1,52 @@
+Inheritance
+-----------
+
+One class can use the properties and methods of another class.
+
+It helps in:
+    -Code reuse
+    -Reducing duplication
+    -Creating hierarchy
+
+Inheritance represents IS-A.
+
+Child class inherits:
+    ✔ Public methods
+    ✔ Protected methods
+    ✔ Non-private variables
+
+Child class does NOT inherit:
+    ❌ Private members (they exist but cannot be accessed directly). They can only be accessed through public or protected methods of the parent.
+
+            class Parent {
+                private int x = 10;
+
+                public int getX() {
+                    return x;
+                }
+            }
+
+            class Child extends Parent {
+                void display() {
+                    System.out.println(getX());  // ✅ Allowed
+                }
+            }
+
+Memory is created for a Child object. Since Child extends Parent, the Parent part is also created inside the Child object.
+So the Child object contains:
+    -Parent properties & methods
+    -Child properties & methods
+
+If a child class doesn’t override a method, it uses the parent’s version.
+
+When child method is called, JVM uses dynamic method lookup.
+It first checks in Child class, and if not found, it checks Parent class and executes the method from there.
+
+Why Java doesn’t allow multiple inheritance (very important interview question)
+Because of the Diamond Problem: JVM wouldn’t know which method to call, causes ambiguity.
+Java allows multiple inheritance only through interfaces.
+      A
+     / \
+    B   C
+     \ /
+      D
