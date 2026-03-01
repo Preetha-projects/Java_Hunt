@@ -1,0 +1,50 @@
+Polymorphism:
+-------------
+Polymorphism is the ability of an object to take on many forms.
+
+The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+Parent p = new Child();
+All Java objects are polymorphic since any object will pass the IS-A test for its own type and for the class Object.
+
+Two things exist:
+
+1️⃣ Reference Type → decides what methods you can call
+2️⃣ Object Type → decides which overridden method runs
+
+instanceof:
+- checks the object type.
+- depends on the actual object created using new, not the reference type.
+
+Always ask:
+What object was created with new? ignore reference type.
+
+Then ask:
+Is that object part of the hierarchy being checked? ---> to check instanceof
+
+Types of Java Polymorphism:
+---------------------------
+1. Compile-time polymorphism is also known as static polymorphism and it is implemented by method overloading.
+2. Run time polymorphism is also known as dynamic method dispatch and it is implemented by the method overriding.
+
+The Golden Rule
+----------------
+Runtime polymorphism works ONLY for:
+
+    ✔ Instance methods
+    ❌ Static methods
+    ❌ Private methods
+    ❌ Final methods
+
+Polymorphism allows:
+👉 You can only call methods that exist in the reference type
+👉 But overridden versions are chosen at runtime by JVM based on the actual object type created with new
+
+It does NOT allow:
+👉 Accessing child-specific methods using parent reference
+
+
+Runtime polymorphism = Concept
+Dynamic binding = Mechanism that makes it happen
+dynamic binding enables runtime polymorphism.
+
+@Override is not mandatory, but it is good practice because it helps the compiler detect errors in method overriding.

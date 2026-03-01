@@ -1,4 +1,4 @@
-package CoreJava;
+package CoreJava.OOPS;
 
 /* ---- Fields (variables) are bound at compile time using reference type.
        Non-static fields are not polymorphic.
@@ -10,9 +10,20 @@ package CoreJava;
  Reference type vs object type matters:
        Reference type → decides fields/Instance or non-static variables and static members at compile time
        Object type    → decides instance method, constructors execution at runtime
+       Instance methods support overriding. Overridden methods are resolved at runtime based on the actual object type, not the reference type.
 
-        Instance variables are created at runtime inside the object, but they are accessed based on the reference type at compile time.
-        Unlike methods, variables do not support runtime polymorphism in Java.
+       Instance variables are created at runtime inside the object, but they are accessed based on the reference type at compile time.
+       Unlike methods, variables do not support runtime polymorphism in Java.
+
+| Reference type | Object type | Can call method in Parent? | Can call method in Child? |
+| -------------- | ----------- | -------------------------- | ------------------------- |
+| Parent         | Parent      | ✅ Yes                     | ❌ No                     |
+| Parent         | Child       | ✅ Yes                     | ❌ No                     |
+| Child          | Child       | ✅ Yes                     | ✅ Yes                    |
+| Child          | Parent?     | ❌ Impossible              | ❌ N/A                    |
+
+- Reference type decides what methods/fields you can access at compile time
+- Object type decides which overridden method actually runs at runtime
 
 | Compile Time               | Runtime                       |
 | -------------------------- | ----------------------------- |

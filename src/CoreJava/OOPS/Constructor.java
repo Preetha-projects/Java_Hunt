@@ -7,6 +7,13 @@ A constructor is a special method:
     Has no return type
     Is called automatically when object is created
     Used to initialize object state
+
+ | Parent Constructor        | Child Requirement                 |
+| ------------------------- | --------------------------------- |
+| No constructor (default)  | Nothing, default `super()` called |
+| No-arg constructor        | Nothing, default `super()` called |
+| Parameterized constructor | Must call `super(...)` explicitly |
+
  */
 public class Constructor {
 

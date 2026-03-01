@@ -1,0 +1,31 @@
+Abstraction
+-----------
+Abstraction means hiding implementation details and showing only essential functionality.
+
+Abstraction is Achieved Using:
+
+    1️⃣ Abstract Classes - partial abstraction
+    2️⃣ Interfaces - full abstraction
+
+An abstract class:
+
+   - Cannot be instantiated (you cannot create objects of an abstract class)
+   - Can have abstract methods (no body)
+   - Can have normal methods (with body)
+   - Can have constructors and variables
+
+
+Rules for Abstract Classes:
+
+    1. If a class has at least one abstract method, then the class must be declared as abstract.
+    2. An abstract class can have zero or more abstract methods.
+    3. An abstract class can have concrete methods (methods with implementation).
+    4. An abstract class cannot be instantiated directly; it must be subclassed.
+    5. A subclass of an abstract class must provide implementations for all abstract methods, unless the subclass is also declared as abstract.
+
+
+| Abstraction                             | Encapsulation                    |
+| --------------------------------------- | -------------------------------- |
+| Hides implementation                    | Hides data                       |
+| Achieved using abstract class/interface | Achieved using private variables |
+| Focus on behavior                       | Focus on data security           |
