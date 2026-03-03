@@ -26,3 +26,9 @@ for (int right = 0; right < s.length(); right++) {
 | Size known (k)      | Size unknown                |
 | Always move both    | Move left only when invalid |
 | Example: Max vowels | Example: No repeating chars |
+
+
+For:
+    Longest problems → Shrink only when invalid and update max
+    Minimum problems → shrink while valid
+    Counting problems → add (right - left + 1)

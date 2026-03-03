@@ -31,7 +31,7 @@ class Car extends Vehicle {
     protected int price;
 
     Car(int price){
-        this.price=price;   //to need to super() as there is no constructor in parent class.
+        this.price=price;   //no need of super() as there is no constructor in parent class.
     }
 
     @Override
