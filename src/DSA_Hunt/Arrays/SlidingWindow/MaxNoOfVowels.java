@@ -6,4 +6,38 @@ Vowels are: a, e, i, o, u (both lowercase and uppercase if specified).
  */
 
 public class MaxNoOfVowels {
+
+    public static int maxVowels (String word, int k) {
+        int count =0;
+        for (int i=0; i<k; i++) {
+            char ch = word.charAt(i);
+            if (isVowel(ch))
+                count++;
+        }
+
+        int maxCount = count;
+
+        for (int i=k; i<word.length(); i++){
+
+            if (isVowel(word.charAt(i)))
+                count++;
+
+            if (isVowel(word.charAt(i-k)))
+                count--;
+
+            maxCount=Math.max(maxCount,count);
+
+       }
+        return maxCount;
+    }
+
+    public static boolean isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+
+    public static void main(String[] args) {
+        String word = "abciiidef";
+        int k = 3; // Size of the substring
+        System.out.println(maxVowels(word,k));
+    }
 }

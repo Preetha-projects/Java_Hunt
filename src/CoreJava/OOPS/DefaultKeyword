@@ -1,0 +1,45 @@
+Default keyword allows us to define methods with implementation inside an interface.
+It was introduced in Java 8 to provide backward compatibility and avoid breaking existing implementations
+
+Java does NOT support multiple inheritance with classes:
+--------------------------------------------------------
+
+    class A {}
+    class B {}
+    class C extends A, B {} // ❌ Not allowed
+
+But Java does allow multiple interface implementation:
+--------------------------------------------------------
+
+    interface A {}
+    interface B {}
+    class C implements A, B {} // ✅ Allowed
+
+Why Was default Introduced?
+---------------------------
+    Before Java 8:
+
+    - Interfaces could only have abstract methods
+
+    If you added a new method to an interface,
+    👉 all implementing classes would break ❌
+
+    To solve this problem, Java 8 introduced:
+    ✅ default methods
+        - A default method is a method inside an interface that has a body. It provides a default implementation.
+        - Default methods are not mandatory to override
+        - Child class can override if needed
+        - They help maintain backward compatibility
+
+    What If Two Interfaces Have Same Default Method?
+
+        If two interfaces have the same default method, the implementing class must override it to resolve the conflict.
+
+        Example:
+            class Test implements A, B {
+
+                public void show() {
+                    A.super.show();   // choose explicitly
+                }
+            }
+            

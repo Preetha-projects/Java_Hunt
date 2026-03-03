@@ -1,0 +1,37 @@
+1. An interface is a reference type and is similar to the class.
+
+2. An interface is implicitly abstract.
+
+3. Methods in an interface are implicitly public and abstract.
+
+4. An interface can extend another interface
+
+5. You cannot instantiate an interface.
+
+6. An interface does not contain any constructors.
+
+7. All of the methods in an interface are abstract.
+
+8. An interface can extend multiple interfaces.
+
+Functional Interface?
+
+A Functional Interface is an interface that contains exactly ONE abstract method.
+It enables lambda expressions and is the foundation of functional programming in Java
+
+It can have:
+    ✅ One abstract method
+    ✅ Multiple default methods
+    ✅ Multiple static methods
+    ❌ More than one abstract method
+
+What is @FunctionalInterface Annotation?
+
+    @FunctionalInterface
+    interface Test {
+        void run();
+    }
+
+This annotation:
+- Ensures interface has only ONE abstract method
+- Compiler gives error if you add another

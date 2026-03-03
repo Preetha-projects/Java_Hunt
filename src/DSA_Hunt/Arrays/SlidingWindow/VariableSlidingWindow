@@ -1,0 +1,28 @@
+Variable Sliding Window Template
+================================
+
+Control it using:
+    left pointer (start)
+    right pointer (end)
+
+int left = 0;
+int maxLength = 0;
+
+for (int right = 0; right < s.length(); right++) {
+
+    // 1️⃣ Expand window (include right element)
+
+    while (condition is invalid) {
+        // 2️⃣ Shrink window (move left pointer)
+        left++;
+    }
+
+    // 3️⃣ Update answer
+    maxLength = Math.max(maxLength, right - left + 1);
+}
+
+| Fixed Window        | Variable Window             |
+| ------------------- | --------------------------- |
+| Size known (k)      | Size unknown                |
+| Always move both    | Move left only when invalid |
+| Example: Max vowels | Example: No repeating chars |
