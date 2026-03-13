@@ -31,7 +31,7 @@ public class LongestSubstringWithoutRepeatingChar {
         int left = 0;
         int maxLength = 0;
 
-        Set<Character> set = new HashSet<>();
+        Set<Character> set = new HashSet<>(); //To store unique characters in the current window.
         for (int right = 0; right < word.length(); right++) {
             while (set.contains(word.charAt(right))) {   //Use while, Not if, because there can be multiple duplicates in the current window. We need to shrink the window until there are no duplicates.
                 set.remove(word.charAt(left));

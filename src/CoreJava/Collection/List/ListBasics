@@ -1,0 +1,42 @@
+List is an ordered collection of elements. It allows duplicate elements and maintains the insertion order.
+Key Properties
+    - Maintains insertion order
+    - Allows duplicates
+    - Supports index-based access
+    - Allows null elements
+
+Common Implementations
+    - ArrayList: is implemented using a dynamic array. It stores elements in an internal Object array.
+    - LinkedList: Doubly-linked list implementation, provides better performance for insertions and deletions but slower random access compared to ArrayList.
+    - Vector: Synchronized resizable array implementation
+
+
+Arrays va ArrayLists :
+----------------------
+Arrays have fixed size and support primitive types,
+while ArrayList has dynamic size and supports only objects but provides many built-in methods like add(), remove(), and contains() for easier manipulation of elements.
+Disadvantage:
+❌ Slow insertion/deletion in the middle
+
+| Feature    | Array               | ArrayList             |
+| ---------- | ------------------- | --------------------- |
+| Size       | Fixed               | Dynamic               |
+| Data Types | Primitive + Objects | Objects only          |
+| Methods    | Limited             | Many built-in methods |
+
+
+ArrayList vs LinkedList :
+--------------------------
+
+| Feature            | ArrayList                  | LinkedList                           |
+| ------------------ | -------------------------- | ------------------------------------ |
+| Internal structure | Dynamic array              | Doubly linked list                   |
+| Memory storage     | Continuous memory          | Nodes connected by references        |
+| Access (get)       | **O(1)** fast              | **O(n)** slow                        |
+| Insert at middle   | **O(n)** (shifting needed) | **O(1)** (change pointers)           |
+| Delete at middle   | **O(n)**                   | **O(1)**                             |
+| Memory usage       | Less (stores only data)    | More (stores prev & next references) |
+| Best use case      | Frequent access            | Frequent insert/delete               |
+
+
+

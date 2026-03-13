@@ -1,0 +1,108 @@
+Collection Framework
+====================
+
+What is collection framework?
+
+A collections framework is a unified architecture for representing and manipulating collections.
+It provides a set of interfaces and classes that allow you to work with different types of collections, such as lists, sets, and maps, in a consistent way.
+The Collection Framework is a set of:
+     1. Interfaces (List, Set, Queue, etc.)
+     2. Classes (ArrayList, HashSet, LinkedList, etc.)
+     3. Algorithms (sorting, searching)
+
+Why use collection?
+
+    1. Store dynamic data
+    2. Add or remove elements easily
+    3. Search and sort data
+    4. Reduce manual coding
+
+Hierarchy of Collection Framework:
+==================================
+
+-The collection framework in Java is organized into a hierarchy of interfaces and classes
+                          Iterable
+                              |
+                         Collection
+        ------------------------------------------------
+        |                     |                       |
+       List                  Set                    Queue
+        |                     |                       |
+  ---------------      ----------------        -----------------
+  |      |      |      |      |       |        |               |
+ArrayList LinkedList Vector HashSet LinkedHashSet TreeSet  PriorityQueue
+                     |
+                   Stack
+
+
+Map ((Not part of Collection interface but part of framework)
+-------------------------------
+
+                Map
+        --------------------
+        |        |         |
+     HashMap  LinkedHashMap TreeMap
+        |
+     Hashtable
+
+
+Iterable (Top Interface)
+    Root interface for collections.
+    Allows iteration using loops.
+
+Example:
+        for(String name : list){
+            System.out.println(name);
+        }
+
+Main method: Iterator<T> iterator()
+
+
+| Type  | Key Feature                  |
+| ----- | ---------------------------- |
+| List  | Ordered + duplicates allowed |
+| Set   | No duplicates                |
+| Queue | FIFO structure               |
+| Map   | Key-value pairs              |
+
+
+1️⃣ List
+2️⃣ ArrayList
+3️⃣ LinkedList
+4️⃣ Set
+5️⃣ HashSet
+6️⃣ Map
+7️⃣ HashMap
+8️⃣ Comparable vs Comparator
+9️⃣ Iterator
+🔟 Collections.sort()
+
+HashMap Internal Working (Very Important)
+2️⃣ HashMap vs HashSet
+4️⃣ Iterator and ListIterator
+5️⃣ Fail-Fast vs Fail-Safe
+6️⃣ Collections Utility Class
+
+Top 10 Collection Coding Questions (Very Common)
+
+Practice these and you’ll be interview ready:
+
+Remove duplicates from array
+
+Word frequency using HashMap
+
+Reverse a list
+
+Two sum problem
+
+Find first non-repeating character
+
+Sort custom objects
+
+Find duplicates in list
+
+Find intersection of two arrays
+
+Count character frequency
+
+Find second largest number

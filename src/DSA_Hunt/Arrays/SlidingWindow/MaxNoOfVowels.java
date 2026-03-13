@@ -3,6 +3,9 @@ package DSA_Hunt.Arrays.SlidingWindow;
 Problem: Maximum Number of Vowels in a Substring of Size K
 Given a string S and an integer K, find the maximum number of vowels present in any substring of size K.
 Vowels are: a, e, i, o, u (both lowercase and uppercase if specified).
+
+Time Complexity: O(n) - Each character is visited at most twice (once when added to the count and once when removed).
+Space Complexity: O(1) - We are using a constant amount of space to store the
  */
 
 public class MaxNoOfVowels {

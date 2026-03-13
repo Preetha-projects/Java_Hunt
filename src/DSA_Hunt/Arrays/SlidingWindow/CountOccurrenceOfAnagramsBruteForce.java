@@ -35,7 +35,8 @@ public class CountOccurrenceOfAnagramsBruteForce {
 
         // Count characters from first string
         for (int i = 0; i < s1.length(); i++) {
-            freq[s1.charAt(i) - 'a']++;
+            freq[s1.charAt(i) - 'a']++;    //Java converts characters to their ASCII values and subtracts them.
+            //example: c' - 'a'     → 99 - 97 → 2 (index for 'c' in frequency array)
         }
 
         // Subtract characters from second string
@@ -58,16 +59,17 @@ public class CountOccurrenceOfAnagramsBruteForce {
         int k = pattern.length();
 
         // Loop through all substrings of size k
-        for (int i = 0; i <= text.length() - k; i++) {
+        for (int i = 0; i <= text.length() - k; i++) {  //O(n-k+1) - We are iterating through the text to get all possible substrings of length k
 
             // Extract substring
-            String sub = text.substring(i, i + k);
+            String sub = text.substring(i, i + k);    //O(k) - substring method takes O(k) time as it creates a new string of length k
 
             // Check if it's an anagram
-            if (isAnagram(sub, pattern)) {
+            if (isAnagram(sub, pattern)) {  //O(k) - isAnagram method takes O(k) time as it processes two strings of length k
                 count++;
             }
         }
+        //O(n × k) - Overall time complexity is O(nk) due to the nested operations of extracting substrings and checking for anagrams.
 
         return count;
     }
