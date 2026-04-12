@@ -41,3 +41,12 @@ Converts : O(n²) → O(n)
 | Input loops           | `while`       |
 | Infinite loops        | `while(true)` |
 
+
+| Goal           | Approach               |
+| -------------- | ---------------------- |
+| One pair       | Two pointer            |
+| All pairs      | Two pointer + continue |
+| Unique pairs   | Skip duplicates        |
+| Unsorted array | Sort OR HashSet        |
+
+

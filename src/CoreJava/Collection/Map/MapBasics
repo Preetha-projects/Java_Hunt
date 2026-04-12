@@ -1,0 +1,36 @@
+Map
+===
+a Map is an interface that stores data as: Key → Value
+
+Key Rules:
+----------
+    Keys are unique
+    Values can be duplicated
+    Each key maps to exactly one value
+
+Common Implementations:
+-----------------------
+    HashMap: Unordered, allows null keys/values, not thread-safe
+    TreeMap: Sorted by keys, no null keys, not thread-safe
+    LinkedHashMap: Maintains insertion order, allows null keys/values, not thread-safe
+
+
+Why Map is Used?
+----------------
+    Fast lookup
+    Key-based storage
+    Counting / tracking
+
+-------------------------
+map.getOrDefault(key, 0)  ->  returns value for key or 0 if key not present
+-------------------------
+
+map.getOrDefault(key, 0) is used in:
+------------------------------------
+    Counting elements
+    Finding duplicates
+    Anagrams
+    Subarray Sum = K ⭐
+    Most frequent element
+
+

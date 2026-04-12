@@ -1,0 +1,46 @@
+Thread safety
+=============
+
+Thread safety means multiple threads can access shared resource and modify data without causing inconsistencies or errors.
+
+How to Make a List Thread-Safe?
+------------------------------
+1. Use synchronized wrapper to wrap a regular list:
+    List<String> list = Collections.synchronizedList(new ArrayList<>());
+
+2. Use CopyOnWriteArrayList which creates a new copy of the list on each modification:
+    List<String> list = new CopyOnWriteArrayList<>();
+
+
+What is concurrent collection?
+------------------------------
+    Concurrent collections are designed to handle concurrent modifications by multiple threads without throwing exceptions.
+    They use internal synchronization mechanisms to ensure thread safety while allowing concurrent access.
+    example: CopyOnWriteArrayList
+
+A race condition occurs when multiple threads access shared data and the final result depends on the timing/order of execution.
+
+
+| Type                 | Thread Safety | Performance (Read) | Performance (Write) | Use Case                              |
+| -------------------- | ------------- | ------------------ | ------------------- | --------------------------------      |
+| Array                | No            | O(1)              | O(n)                 | Fixed size, simple data storage       |
+| ArrayList            | No            | O(1)              | O(n)                 | Dynamic array, general-purpose list   |
+| LinkedList           | No            | O(n)              | O(1)                 | Frequent insertions/deletions         |
+| Vector               | Yes           | O(1)              | O(n)                 | Thread-safe dynamic array, legacy class |
+| CopyOnWriteArrayList | Yes           | O(1)              | O(n)                 | Thread-safe list optimized for reads, infrequent writes |
+
+
+| Feature           | Vector                  | CopyOnWriteArrayList  |
+| ----------------- | ----------------------- | --------------------- |
+| Thread Safety     | ✅ Yes                   | ✅ Yes               |
+| Strategy          | 🔒 Full synchronization | 📄 Copy-on-write      |
+| Read Performance  | ❌ Slow (locked)         | ✅ Fast (no lock)    |
+| Write Performance | ⚖️ Moderate             | ❌ Slow (copy happens)|
+| Usage             | ❌ Legacy                | ✅ Modern            |
+
+Lock: Allowing only one thread at a time to access a resource
+
+Problem with Locking
+    Threads wait → slower performance
+    Especially bad for read operations
+

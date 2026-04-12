@@ -1,0 +1,62 @@
+SET
+===
+
+Set interface is a collection that contains no duplicate elements and no particular order.
+Allows one null element.
+
+
+Default implementations of Set:
+-------------------------------
+    HashSet - backed by a hash table, unordered  -> Set<Integer> set = new HashSet<>();
+    TreeSet - backed by a red-black tree, maintains sorted order
+    LinkedHashSet - backed by a hash table and linked list, maintains insertion order
+
+1. If insertion order matters → use LinkedHashSet
+2. If sorting needed → use TreeSet
+3. If just remove duplicates fast → use HashSet
+
+
+Why hashCode() and equals() are important for Set?
+--------------------------------------------------
+HashSet uses hashCode() to determine the bucket for storing elements and equals() to check for duplicates.
+If these methods are not properly implemented, it can lead to incorrect behavior of the Set, such as allowing duplicates or failing to find existing elements.
+
+
+Why hashSet is unordered?
+-------------------------
+because it stores elements based on hash values, not sequence.
+Example:
+    When you do: set.add(25);
+    Java does NOT store it like a list ([25, ...])
+    Instead, it does this:
+        1. Generate hash code
+                     int hash = 25.hashCode(); // for Integer, it's 25
+        2. Decide bucket
+                    index = hash % number_of_buckets;
+        3. Store in that bucket
+    When printing, Java goes bucket by bucket → not insertion order
+
+HashSet vs HashMap
+-------------------
+HashSet stores only values vs HashMap stores key–value pairs
+
+| Feature   | HashSet      | HashMap                              |
+| --------- | ------------ | ------------------------------------ |
+| Stores    | Only values  | Key + Value                          |
+| Duplicate | Not allowed  | Keys not allowed (values can repeat) |
+| Example   | `["A", "B"]` | `{1=A, 2=B}`                         |
+| Method    | `add()`      | `put()`                              |
+
+
+     List	          |           Set
+------------------------------------------------
+Allows duplicates	  |  Does not allow duplicates
+Maintains order	      |  Does not guarantee order
+Access by index	      |  No index-based access
+
+
+If problem says:   -> use set
+    "duplicate"
+    "unique"
+    "contains"
+    "lookup fast"

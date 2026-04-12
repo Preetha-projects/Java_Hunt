@@ -1,0 +1,24 @@
+MUST-DO HashSet Problems
+
+These build your “seen / uniqueness / lookup” intuition
+
+🟢 Easy → Medium
+----------------
+Contains Duplicate
+    👉 Basic HashSet usage
+    👉 Pattern: “Have I seen this before?”
+Intersection of Two Arrays
+    👉 Use set for uniqueness
+Happy Number
+    👉 Detect cycle using HashSet (very important pattern!)
+Longest Consecutive Sequence ⭐
+    👉 One of the MOST important
+    👉 Pattern: sequence + set
+Find All Duplicates in an Array
+    👉 Slight twist on duplicate detection
+
+1. Remove Duplicates from Array
+2. Check if Array Contains Duplicates
+4. Find Missing Number (0 to n)
+6. First Repeating Element
+7. Two Sum (Set Approach)

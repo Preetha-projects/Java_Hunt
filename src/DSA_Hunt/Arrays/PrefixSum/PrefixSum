@@ -1,0 +1,59 @@
+PREFIX SUM
+==========
+
+A prefix sum array stores the cumulative sum up to each index.
+
+If original array is:
+
+arr = [a, b, c, d]
+
+Then the prefix sum array would be:
+prefix_sum = [a, a+b, a+b+c, a+b+c+d]
+
+How to Build Prefix Sum
+------------------------
+
+int[] prefix = new int[n];
+prefix[0] = arr[0];
+
+for (int i = 1; i < n; i++) {
+    prefix[i] = prefix[i - 1] + arr[i];
+}
+
+
+Range Sum Query (Main Use)
+--------------------------
+Find sum from index L to R : sum(L, R) = prefix[R] - prefix[L - 1]
+
+
+Why Prefix Sum?
+---------------
+Without prefix sum: Each query = O(n)
+
+With prefix sum: Preprocessing = O(n)
+                 Each query = O(1)
+
+
+Types of Prefix Sum
+-------------------
+| Type             | Use Case           |
+| ---------------- | ------------------ |
+| Basic Prefix     | Range sum queries  |
+| HashMap Prefix   | Subarray sum = K   |
+| 2D Prefix        | Matrix queries     |
+| Difference Array | Range updates      |
+| Modulo Prefix    | Divisible problems |
+
+
+MUST-DO LIST (If Short on Time)
+
+If you only do 6 problems, do THESE:
+
+1. Subarray Sum Equals K
+2. Subarray Sums Divisible by K
+3. Product of Array Except Self
+4. Range Sum Query 2D
+5. Binary Subarrays With Sum
+6. Number of Submatrices That Sum to Target
+
+

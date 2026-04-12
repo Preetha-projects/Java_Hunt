@@ -1,0 +1,34 @@
+🔹 MUST-DO HashMap Problems
+
+These are HIGH PRIORITY for interviews
+
+🟢 Easy
+--------
+1. Two Sum ⭐
+    👉 #1 most asked problem
+    👉 Pattern: complement lookup
+2. First Unique Character in a String
+    👉 Frequency counting
+3. Valid Anagram
+    👉 Compare frequency maps
+
+🟡 Medium (VERY IMPORTANT)
+----------------------------
+4. First Repeating Element
+    👉 You already did this 👏
+5. Top K Frequent Elements ⭐
+    👉 Frequency + heap (very common)
+6. Group Anagrams ⭐
+    👉 Pattern recognition problem
+7. Subarray Sum Equals K ⭐🔥
+    👉 VERY IMPORTANT
+    👉 Uses prefix sum + HashMap
+8. Longest Subarray with Sum K
+    👉 Variation of above
+
+🔴 Must-Know Patterns
+----------------------
+9. Longest Substring Without Repeating Characters ⭐🔥
+    👉 Sliding window + HashSet/Map
+10. Minimum Window Substring
+    👉 Advanced sliding window

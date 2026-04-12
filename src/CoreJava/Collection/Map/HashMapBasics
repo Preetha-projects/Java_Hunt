@@ -1,0 +1,66 @@
+HashMap
+=======
+
+| Operation | Time |
+| --------- | ---- |
+| put       | O(1) |
+| get       | O(1) |
+| remove    | O(1) |
+
+What is HashMap?
+------------------
+    HashMap is a data structure that implements the Map interface and stores key-value pairs using hashing
+    It allows null keys and values, but only one null key
+    It does not maintain any order of keys
+    It is not synchronized, so it is not thread-safe
+    It uses hash code of keys for fast access
+    It allows duplicate values but not duplicate keys
+
+What is Hashing?
+------------------
+    Hashing is a technique to convert a key into a number (index)
+
+How HashMap Works:
+------------------
+                    Key → hashCode() → index → store value
+HashMap converts a key into an index using hashCode and stores the value in that bucket
+
+Example:
+      "apple"
+         ↓
+      hashCode() → 93029210
+         ↓
+      index = 93029210 % 16 → 10
+         ↓
+      store at bucket[10]
+
+Collision Handling
+------------------
+    When two keys hash to the same index, HashMap uses chaining (linked list or tree) to store multiple entries in the same bucket
+    If bucket has multiple entries, it checks each entry for the key using equals() method
+    If key found, update value; if not, add new entry to the bucket
+
+Rehashing
+-----------
+When HashMap becomes too full, it expands:
+    New array created (double size)
+    All elements are rehashed
+    Placed into new positions
+
+Capacity = 16
+Load factor = 0.75
+
+Concurrent HashMap
+------------------
+    ConcurrentHashMap is a thread-safe variant of HashMap
+    Segment locking / bucket-level locking allows concurrent access by multiple threads without full synchronization
+    It does not allow null keys or values
+
+| Structure         | Thread Safe? | Strategy        |
+| ----------------- | ------------ | --------------- |
+| HashMap           | ❌ No         | None            |
+| Hashtable         | ✅ Yes        | Full locking    |
+| ConcurrentHashMap | ✅ Yes        | Partial locking |
+
+
+
