@@ -1,0 +1,86 @@
+Circular queue solves the space wastage problem of linear queue by using modulo arithmetic to reuse freed indices.
+ex:
+    0 % 5 = 0
+    1 % 5 = 1
+    2 % 5 = 2
+    3 % 5 = 3
+    4 % 5 = 4
+    5 % 5 = 0   ← wraps
+    6 % 5 = 1
+
+
+1. Add size variable
+--------------------
+        private int size;
+
+        Initialize in constructor:
+
+        size = 0;
+
+
+🔁 2. Update enqueue()
+--------------------
+        public void enqueue(int value) {
+            if (size == capacity) {
+                System.out.println("Queue is full");
+                return;
+            }
+            rear = (rear + 1) % capacity;
+            arr[rear] = value;
+            size++;
+        }
+
+
+🔁 3. Update deque()
+--------------------
+        public int deque() {
+            if (size == 0) {
+                System.out.println("Queue is empty");
+                return -1;
+            }
+            int value = arr[front];
+            front = (front + 1) % capacity;
+            size--;
+            return value;
+        }
+
+
+🔁 4. Update isEmpty() and isFull()
+-----------------------------------
+        public boolean isEmpty() {
+            return size == 0;
+        }
+
+        public boolean isFull() {
+            return size == capacity;
+        }
+
+
+🔁 5. Update display()
+----------------------
+        public void display() {
+            if (size == 0) {
+                System.out.println("Queue is empty");
+                return;
+            }
+
+            for (int i = 0; i < size; i++) {
+                System.out.print(arr[(front + i) % capacity] + " ");
+            }
+            System.out.println();
+        }
+
+
+| Feature            | Linear Queue ❌ | Circular Queue ✅   |
+| ------------------ | -------------- | ------------------ |
+| Movement           | Straight       | Circular (wraps)   |
+| Space usage        | Wastes space   | Uses full capacity |
+| Overflow condition | `rear == n-1`  | `size == capacity` |
+| Reusability        | No             | Yes                |
+| Efficiency         | Lower          | Higher             |
+
+
+Linear Queue:
+0 → 1 → 2 → 3 → 4 → STOP ❌
+Circular Queue:
+0 → 1 → 2 → 3 → 4 → 0 → 1 → ... 🔁

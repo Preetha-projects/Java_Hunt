@@ -1,0 +1,35 @@
+QUEUE
+=====
+
+Queue is a collection used to hold multiple elements prior to processing.
+It follows the First-In-First-Out (FIFO) principle, where the first element added to the queue is the first one to be removed.
+
+Core Operations:
+----------------
+    Enqueue → add element at rear
+    Dequeue → remove element from front
+    Peek/Front → see first element
+    isEmpty / isFull → check if queue is empty or full
+
+Time Complexity
+---------------
+    Enqueue → O(1)
+    Dequeue → O(1)
+
+Common Implementations:
+----------------------
+    LinkedList → implements Queue interface, allows null elements
+    ArrayDeque → resizable array, no capacity restrictions, faster than LinkedList for queues
+    PriorityQueue → elements ordered by natural ordering or comparator, not FIFO
+    ConcurrentLinkedQueue → thread-safe, non-blocking queue for concurrent access
+
+
+Types of Queues:
+----------------
+    1. Simple Queue -  Basic FIFO
+    2. Circular Queue -
+       - Last position connects to first
+       - Avoids wasted space in arrays
+    3. Priority Queue
+       - Elements processed based on priority
+       - Implemented using heap

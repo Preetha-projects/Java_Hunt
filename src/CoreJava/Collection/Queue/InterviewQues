@@ -1,0 +1,141 @@
+
+| Feature  | Queue           | Deque                             |
+| -------- | --------------- | --------------------------------- |
+| Access   | One end         | Both ends                         |
+| Order    | FIFO            | Flexible                          |
+| Use case | BFS, scheduling | Sliding window, advanced problems |
+
+Tip:
+Prefer ArrayDeque over LinkedList in Java (faster)
+Never use Stack class → use Deque instead
+
+
+PHASE 1: Queue Basics (Start Easy)
+--------------------------------
+1. Implement Queue using Array
+
+👉 Learn:
+    Front, rear handling
+    Basic operations
+
+2. Implement Queue using Linked List
+
+👉 Learn:
+    Dynamic size
+    Pointer handling
+
+3. Implement Queue using Stacks (🔥 Very important)
+
+👉 Learn:
+    Two-stack trick
+    Amortized O(1)
+
+4. Reverse a Queue
+
+👉 Learn:
+
+Stack + Queue combo
+5. First Non-Repeating Character in a Stream
+
+👉 Learn:
+
+Queue + HashMap combo
+Real interview pattern
+
+
+🚀 PHASE 2: Deque + Sliding Window (CORE)
+------------------------------------------
+6. Implement Deque
+
+👉 Learn:
+
+addFirst, addLast, removeFirst, removeLast
+7. Sliding Window Maximum 🔥🔥
+
+👉 MUST MASTER
+
+👉 Learn:
+
+Monotonic deque
+O(n) optimization
+8. Sliding Window Minimum
+
+👉 Same logic, reverse thinking
+
+9. Sum of Min + Max of All Subarrays
+
+👉 Learn:
+
+Using two deques together
+
+
+🚀 PHASE 3: BFS (Queue in Action 🔥)
+-------------------------------------
+
+Now you connect queue to real problems.
+
+10. Binary Tree Level Order Traversal
+
+👉 Easiest BFS
+👉 Learn:
+
+Level-by-level traversal
+11. Rotten Oranges 🍊
+
+👉 🔥 VERY COMMON
+
+👉 Learn:
+
+Multi-source BFS
+Time-based spreading
+12. Number of Islands
+
+👉 Learn:
+
+Grid traversal
+BFS pattern
+13. Flood Fill
+
+👉 Easy + builds confidence
+
+14. Shortest Path in Binary Matrix
+
+👉 Learn:
+
+BFS for shortest path
+🚀 PHASE 4: Mixed / Interview-Level
+15. LRU Cache 🔥
+
+👉 Learn:
+
+Deque + HashMap
+Real-world system pattern
+16. Circular Queue Design
+
+👉 Learn:
+
+Modulo arithmetic
+Edge cases
+17. Interleave First Half of Queue
+
+👉 Learn:
+
+Queue manipulation
+🧠 How to Use This List (Important)
+
+
+
+If you want just enough to crack interviews, do:
+------------------------------------------------
+Queue using stacks
+First non-repeating character
+Sliding window maximum
+Rotten oranges
+Number of islands
+LRU cache
+
+Learn:
+Queue interface
+LinkedList as Queue
+ArrayDeque (very important)
+PriorityQueue (heap concept)

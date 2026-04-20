@@ -1,0 +1,33 @@
+Deque (Double Ended Queue)
+==========================
+
+A Deque allows insertion & deletion from both ends.
+It can be used as a stack (LIFO) or a queue (FIFO).
+The Deque interface is part of the Java Collections Framework and provides methods for adding, removing, and examining elements at both ends of the deque.
+
+Operations
+----------
+    addFirst()
+    addLast()
+    removeFirst()
+    removeLast()
+    peekFirst()
+    peekLast()
+
+Time Complexity
+---------------
+    All operations → O(1)
+
+Types of Deque
+----------------
+1. Input Restricted Deque
+    Insert from one side only
+    Delete from both
+2. Output Restricted Deque
+    Delete from one side only
+    Insert from both
+
+Common Implementations
+----------------------
+    ArrayDeque → resizable array, no capacity restrictions, faster than LinkedList for deques
+    LinkedList → implements Deque interface, allows null elements, slower than ArrayDeque for deques
