@@ -1,0 +1,32 @@
+Kadane's Algorithm
+----------------------
+
+Kadane’s Algorithm is used to find the maximum sum contiguous subarray in an array containing:
+    positive numbers
+    negative numbers
+    mixed numbers
+
+At every element, we decide:
+------------------------------
+1. Start a new subarray from current element
+OR
+2. Extend previous subarray
+
+Decision formula:
+----------------------
+currentSum=max(nums[i],currentSum+nums[i])
+
+Kadane's Algorithm is primarily considered:
+Dynamic Programming style
+Greedy + DP optimization
+
+sum equals k” → Prefix + HashMap
+“maximum subarray sum” → Kadane immediately
+
+
+Problem Goal	Sliding Window?
+--------------------------------
+Find longest/shortest valid subarray	YES
+Find max/min window	YES
+Count all subarrays	Usually NO
+Exact sum with negatives	NO

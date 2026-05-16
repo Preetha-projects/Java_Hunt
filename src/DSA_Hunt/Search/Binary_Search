@@ -1,0 +1,37 @@
+Binary Search
+--------------
+
+Binary Search is a technique used to reduce the search space by half repeatedly.
+Instead of checking every element one by one:
+
+Compare with the middle
+Decide whether the answer lies on the left or right
+Continue on that half
+
+Time Complexity:
+
+Binary Search → O(log n)
+Linear Search → O(n)
+
+
+1. Basic Binary Search : Used on a sorted array.
+
+        If target < middle → go left
+        If target > middle → go right
+
+        Formula:   mid = low + (high - low) / 2
+
+        This avoids integer overflow.
+
+Patterns:
+        | Pattern             | Concept                 |
+        | ------------------- | ----------------------- |
+      1  | Exact Search        | Find target             |
+      2  | Lower Bound         | First >= target         |
+      3  | Upper Bound         | First > target          |
+      4 | First Occurrence    | Leftmost target         |
+      5  | Last Occurrence     | Rightmost target        |
+      6  | Search Answer Space | Binary search on answer |
+      7   | Rotated Array       | Modified binary search  |
+      8  | Peak Problems       | Binary search on trend  |
+      9 | Infinite Array      | Expand + binary search  |
