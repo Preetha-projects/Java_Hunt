@@ -43,6 +43,7 @@ public class WrapperClass {
 
         System.out.println("The primitive int b is: " + b);
         System.out.println("The Integer object a is: " + a);
+        System.out.println(a==b); // because of unboxing of 'a' by java
 
         //2. Unboxing: Integer object -> primitive int
         Integer i = 20;

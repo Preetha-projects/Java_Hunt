@@ -25,10 +25,10 @@ public class PassByValueAndRef {
     public static void main(String[] args){
         int x = 10;
         change(x);
-        System.out.println("Unchanged" + x); // Output: 10, because the value of x is not changed in the main method.
+        System.out.println("Unchanged " + x); // Output: 10, because the value of x is not changed in the main method.
         int[] arr = {1,2,3};
         change(arr);
-        System.out.println("Modified" + arr[0]);    // Output: 50, because the reference to the array is passed, and the change is reflected in the main method.
+        System.out.println("Modified " + arr[0]);    // Output: 50, because the reference to the array is passed, and the change is reflected in the main method.
     }
 
 }

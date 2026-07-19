@@ -1,0 +1,36 @@
+Prefix+HashMap
+--------------------
+
+Whenever you see:
+-------------------
+    subarray
+    exact sum/property
+    count/longest
+    negative numbers allowed
+
+Generic Template
+-------------------
+    HashMap<Integer, Integer> map = new HashMap<>();
+
+    map.put(0, 1);
+
+    int prefixSum = 0;
+    int count = 0;
+
+    for (int num : nums) {
+
+        prefixSum += num;
+
+        if (map.containsKey(prefixSum - k)) {
+            count += map.get(prefixSum - k);
+        }
+
+        map.put(prefixSum,
+                map.getOrDefault(prefixSum, 0) + 1);
+    }
+
+
+Always remember: map.put(0,1);
+
+before starting, prefix sum 0 already occurred once
+This helps handle subarrays starting from index 0

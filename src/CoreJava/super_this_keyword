@@ -61,6 +61,23 @@ You Cannot Use It:
 • In static context                             | • Without an object context
 
 
+Note: super is not a reference to the superclass class itself—it is a reference to the superclass portion of the current object.
+Since static methods execute without any current object, super has no meaning there.
+
+1.
+Employee (parent)
+       ▲
+       |
+Manager (child)
+
+2.
+Manager manager = new Manager();
+
+3.
+manager
+│
+├── Employee part
+└── Manager part
 
 
 

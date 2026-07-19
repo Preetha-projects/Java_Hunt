@@ -6,6 +6,7 @@ package CoreJava;
 3. Static methods and variables can’t access non-static members directly. But non-static members can access static variable directly
 4. Static methods can’t be overridden because they belong to the class, not instances.
 5. Commonly used for utility or helper methods, constants, and shared resources
+6. Static variables can be modified
 
  By declaring main() as static, we allow the JVM to load the class into memory and call the main() method directly.
  */

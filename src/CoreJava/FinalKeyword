@@ -1,0 +1,6 @@
+The final keyword is used to define constants or to prevent inheritance and method overriding.
+It can be used with variables, methods, and classes.
+
+Final variables: The value cannot be changed after initialization (constant).
+Final methods: The method cannot be overridden by subclasses.
+Final classes: The class cannot be subclassed.

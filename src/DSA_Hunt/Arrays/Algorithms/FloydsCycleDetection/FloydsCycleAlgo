@@ -1,0 +1,15 @@
+Idea
+    Use two pointers:
+       - slow moves one step at a time.
+        -fast moves two steps at a time.
+    If there is a cycle, the two pointers will eventually meet.
+    If fast reaches null, there is no cycle.
+
+
+| Feature         | Floyd’s Algorithm                |
+| --------------- | -------------------------------- |
+| Detect cycle    | Yes                              |
+| Extra memory    | O(1)                             |
+| Time complexity | O(n)                             |
+| Uses            | Linked lists, repeated sequences |
+| Technique       | Slow & Fast pointers             |

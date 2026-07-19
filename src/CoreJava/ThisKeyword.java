@@ -9,6 +9,9 @@ public class ThisKeyword {
         //s.name= outerVariable; // Accessing static variable directly
         System.out.println("s.name = " + s.name ); // Output: s.name = Rhea
 
+        StudentWithThis s3 = new StudentWithThis(outerVariable);
+        System.out.println("s3.name = " + s3.name );  // Rhea
+
         StudentWithoutThis s2 = new StudentWithoutThis("Rhea");
         System.out.println("s2.name= " + s2.name); // Output: null
     };

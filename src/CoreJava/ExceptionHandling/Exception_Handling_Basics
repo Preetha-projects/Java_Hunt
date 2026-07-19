@@ -1,0 +1,57 @@
+Exception Handling
+-------------------
+
+An exception is:
+
+An unwanted event that occurs during program execution and disrupts normal flow.
+
+Program crashes immediately without Exception Handling.
+
+Why Exception Handling?
+--------------------------
+To:
+    prevent abrupt termination
+    continue program execution
+    handle errors gracefully
+
+
+    try {
+        // risky code
+    }
+    catch(ExceptionType e) {
+        // handling code
+    }
+    finally {
+        // always executes
+                    Used mainly for:
+                        closing files
+                        database connections
+                        cleanup code
+                        releasing resources
+    }
+
+
+Working Internally
+-------------------
+When exception occurs:
+    JVM creates exception object
+    JVM stops normal flow
+    Searches matching catch block
+    Executes catch block
+    Continues remaining program
+ try → exception occurs → matching catch → continue program
+
+
+Common Exception Types
+-------------------
+    NullPointerException
+    ArrayIndexOutOfBoundsException
+    ArithmeticException
+    NumberFormatException
+    FileNotFoundException
+    IOException
+    ClassNotFoundException
+    IllegalArgumentException
+    IllegalStateException
+    RuntimeException
+    Exception (base class for all exceptions)

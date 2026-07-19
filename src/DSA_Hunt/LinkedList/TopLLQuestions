@@ -1,0 +1,76 @@
+Top 10 Most Asked Linked List Questions
+
+If you have limited time, focus on these:
+
+1. Reverse Linked List - done
+2. Linked List Cycle - done
+3. Remove Nth Node From End of List -done
+4. Merge Two Sorted Lists - done
+5. Palindrome Linked List - done
+6. Intersection of Two Linked Lists
+7. Add Two Numbers
+8. Reorder List
+9. Reverse Nodes in k-Group
+10. LRU Cache
+Swap Nodes in Pairs
+Odd Even Linked List
+
+
+1. Do I need to traverse?
+    while(curr != null)
+
+    Examples:
+        Count nodes
+        Search value
+        Find maximum
+
+2. Do I need two pointers?
+    slow
+    fast
+
+    Examples:
+        Find middle
+        Detect cycle
+        Palindrome
+
+Pattern:
+    while(fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+3. Do I need to modify connections?
+
+    Examples:
+        Reverse list
+        Swap nodes
+        Reorder list
+
+    Pattern:
+        prev
+        curr
+        next
+
+4. Am I deleting a node?
+    Use a dummy node.
+
+    Example:
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;
+
+    Used in:
+
+    Remove nth node
+    Delete duplicates
+    Partition list
+
+The 5 Core Patterns of Linked Lists
+
+Master these and you'll solve most interview questions:
+
+Pattern	Questions
+Traversal	Count nodes, search
+Fast & Slow Pointer	Middle, cycle
+Reverse	Reverse list, palindrome
+Dummy Node	Deletion problems
+Merge Lists	Merge sorted lists

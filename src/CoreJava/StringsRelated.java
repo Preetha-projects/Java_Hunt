@@ -2,6 +2,7 @@ package CoreJava;
 
 import java.util.Objects;
 
+//A String is an object that represents a sequence of characters.
 //String will create a new object in the string pool memory area
 //String is immutable in nature, once created it cannot be changed, it will be available for garbage collection if there is no reference pointing to it.
 //compile-time constants → stored in String Pool.
@@ -52,6 +53,20 @@ StringBuilder → Heavy modification
 
 StringBuffer → Multithreaded modification
 
+String is immutable because it provides:
+    Security – Prevents sensitive data (like URLS and file paths) from being changed.
+    String Pool optimization – Allows multiple references to safely share the same string object, saving memory.
+    Thread safety – Multiple threads can use the same string without synchronization.
+    Performance – Cached values like hashCode() can be reused since the content never changes.
+
+StringBuilder is mutable to provide high performance for frequent string modifications.
+
+How String interning works?
+       String.intern() returns the reference to the string from the String Pool.
+        If the string is not already in the pool, it is added, and the pooled reference is returned.
+
+char[] is preferred over String for storing passwords because it is mutable and can be cleared from memory after use,
+whereas a String is immutable and may remain in memory until garbage collection.
  */
 
 public class StringsRelated {
@@ -110,5 +125,12 @@ public class StringsRelated {
         StringBuilder sb1 = new StringBuilder("Good");
         sb1.append("Morning"); //similar to StringBuffer.
         System.out.println(sb1);
+
+        String a = new String("Hello");
+        String b = s1.intern();
+
+        String c = "Hello";
+
+        System.out.println(b == c); // true
     }
 }
