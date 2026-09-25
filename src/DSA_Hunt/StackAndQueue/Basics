@@ -1,0 +1,48 @@
+Stack — 6 problems
+
+Basic Stack
+20 — Valid Parentheses ⭐ done
+155 — Min Stack ⭐done
+150 — Evaluate Reverse Polish Notation
+
+Monotonic Stack
+496 — Next Greater Element I ⭐
+739 — Daily Temperatures ⭐
+84 — Largest Rectangle in Histogram ⭐⭐
+
+Queue — 4 problems
+
+232 — Implement Queue using Stacks
+225 — Implement Stack using Queues
+933 — Number of Recent Calls
+622 — Design Circular Queue
+
+Then learn Deque through:
+
+239 — Sliding Window Maximum ⭐⭐
+
+
+Stack - Valid parentheses:
+
+    Opening bracket
+          ↓
+        PUSH
+          ↓
+    Closing bracket
+          ↓
+    Check TOP
+          ↓
+    Does it match?
+       ↙       ↘
+     yes       no
+     ↓          ↓
+    POP       false
+
+
+QUEUE: | Function    | What it does                                 | Example           |
+       | ----------- | -------------------------------------------- | ----------------- |
+       | `offer()`   | Add element to the **back**                  | `queue.offer(10)` |
+       | `poll()`    | Remove and return element from the **front** | `queue.poll()`    |
+       | `peek()`    | Look at the front without removing           | `queue.peek()`    |
+       | `isEmpty()` | Check whether queue is empty                 | `queue.isEmpty()` |
+       | `size()`    | Number of elements                           | `queue.size()`    |

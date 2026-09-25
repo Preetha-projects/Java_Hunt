@@ -1,0 +1,106 @@
+Backtracking
+------------
+Backtracking is a problem-solving algorithmic technique that involves finding a solution
+incrementally by trying different options and undoing them if they lead to a dead end.
+
+Backtracking Algorithm:
+
+        Backtrack(x)
+            if x is not a solution
+                return false
+            if x is a new solution
+                add to list of solutions
+            backtrack(expand x)
+
+
+When to Use a Backtracking Algorithm?
+   When There are multiple possible solutions to the problem.
+        The problem can be broken down into smaller subproblems.
+        The subproblems can be solved independently.
+
+Applications of Backtracking Algorithm
+
+    Solving puzzles (e.g., Sudoku, crossword puzzles)
+    Finding the shortest path through a maze
+    Scheduling problems
+    Resource allocation problems
+    Network optimization problems
+    Combinatorial problems, such as generating permutations, combinations, or subsets.
+
+Problems:
+    Recursion
+            ↓
+            ↓
+    78   Subsets
+    46   Permutations
+    77   Combinations
+    39   Combination Sum
+    17   Letter Combinations of a Phone Number
+    22   Generate Parentheses
+           ↓
+           ↓
+    THEN
+    More advanced backtracking
+           ↓
+           ↓
+    Dynamic Programming
+
+Types of pattern in backtracking problems:
+------------------------------------------
+1. Pick / Skip
+
+    78 — Subsets "What are ALL the possible groups I can make?" done
+    90 — Subsets II done
+
+2. Start Index / Combinations
+
+    77 — Combinations  "What are all the possible groups of size K?" done
+    39 — Combination Sum done
+    40 — Combination Sum II done
+
+3. Permutations
+
+    46 — Permutations  "What order can I arrange the elements in?" done
+    47 — Permutations II done
+
+4. Partitioning
+
+    131 — Palindrome Partitioning
+    93 — Restore IP Addresses
+
+5. Grid
+
+    79 — Word Search
+    980 — Unique Paths III
+
+6. Constraints
+
+    51 — N-Queens
+    37 — Sudoku Solver
+
+7. Pruning
+
+    698 — Partition to K Equal Sum Subsets
+    473 — Matchsticks to Square
+
+Subset notes  :
+    | Problem                   | Example                       | Prevented by                                      |
+    | ------------------------- | ----------------------------- | ------------------------------------------------- |
+    | Reusing the same element  | `[1,1]`                       | `i + 1`                                           |
+    | Different ordering        | `[1,2]` vs `[2,1]`            | Always move forward                               |
+    | Duplicate values in input | `[2]` from two different `2`s | `if (i > index && nums[i] == nums[i-1]) continue` |
+
+SUBSET       → start + take/skip
+COMBINATION  → start + choose forward
+PERMUTATION  → used[] + choose unused
+
+Every new backtrack()(recursive) call starts its own for loop with i = 0 when there is no index passed in arguments
+
+|                            | Subset  | Combination | Permutation     |
+| -------------------------- | ------- | ----------- | --------------- |
+| Order matters?             | ❌       | ❌           | ✅            |
+| Size                       | Any     | Exactly `k` | Usually all `n`  |
+| Move forward?              | ✅       | ✅           | ❌            |
+| Main control               | `start` | `start`     | `used[]`         |
+| Can choose previous index? | ❌       | ❌           | ✅ if unused   |
+| `[1,2]` and `[2,1]`        | Same    | Same        | **Different**    |

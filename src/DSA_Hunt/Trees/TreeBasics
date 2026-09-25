@@ -1,3 +1,90 @@
 Tree DFS: 104, 112, 113, 543, 124, 226
 Tree BFS / Level Order: 102, 103, 199, 515, 637, 116
 BST Problems: 98, 99, 230, 235, 450, 700
+
+Data in a tree is not stored sequentially (i.e., not in a linear order).
+Instead, it is organized across multiple levels, forming a hierarchical structure.
+
+A tree can be represented using a collection of nodes
+
+Ex: File systems on computers are structured as trees, with folders containing subfolders and files.
+    The DOM (Document Object Model)
+
+                     TREES
+                       |
+            ┌──────────┴──────────┐
+            ↓                     ↓
+           DFS                   BFS
+            |                     |
+       ┌────┴────┐                |
+       ↓         ↓                ↓
+    Top-down  Bottom-up       Level Order
+       |         |
+       ↓         ↓
+    Path Sum   Diameter
+               Balanced
+               Max Path
+
+                       ↓
+                      BST
+                       |
+              ┌────────┼────────┐
+              ↓        ↓        ↓
+           Search   Validate   Kth Smallest
+
+                       ↓
+                     LCA
+
+                       ↓
+                 Tree Construction
+
+BST property: left subtree  <  node  <  right subtree
+              root
+             /    \
+       smaller    larger
+
+Binary Tree
+    +
+Ordering property
+    =
+BST
+
+Inorder traversal of a valid BST gives sorted values. inorder traversal = left → root → right
+
+
+ Phase 1 — DFS Basics
+     104 — Maximum Depth of Binary Tree     done
+     100 — Same Tree                        done
+     226 — Invert Binary Tree               done
+     101 — Symmetric Tree                   done
+
+ Phase 2 — Bottom-Up DFS
+     110 — Balanced Binary Tree             done
+     543 — Diameter of Binary Tree          done
+     124 — Binary Tree Maximum Path Sum     done
+
+ Phase 3 — Top-Down DFS
+     112 — Path Sum                         done
+     257 — Binary Tree Paths                done
+
+ Phase 4 — BFS / Level Order
+     102 — Binary Tree Level Order Traversal            done
+     103 — Binary Tree Zigzag Level Order Traversal     done
+     199 — Binary Tree Right Side View                  done
+
+ Phase 5 — Binary Search Tree (BST)
+     700 — Search in a Binary Search Tree       done
+     98 — Validate Binary Search Tree           done
+     230 — Kth Smallest Element in a BST        done
+     235 — Lowest Common Ancestor of a BST      done
+
+ Phase 6 — Advanced Tree Patterns
+     236 — Lowest Common Ancestor of a Binary Tree
+     105 — Construct Binary Tree from Preorder and Inorder Traversal
+
+
+     113 Path Sum II
+      700 Search in BST
+      450 Delete Node in BST
+      105 Construct Binary Tree from Preorder + Inorder
+      106 Construct Binary Tree from Inorder + Postorder

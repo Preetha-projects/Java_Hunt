@@ -1,0 +1,61 @@
+The process in which a function calls itself directly or indirectly is called recursion
+
+Steps to solve a problem using recursion:
+1. Define a base case
+2. Define a recursive case
+
+When does Stack Overflow error occur in recursion? when recursion continues indefinitely
+    If the base case is not reached or not defined,
+    then the stack overflow problem may arise.
+
+How memory is allocated to different function calls in recursion?
+    Recursion uses more memory to store data of every recursive call in an internal function call stack
+    That stack frame stores everything needed to continue the function later, including: The values of its local variables, Where to return after the function finishes.
+
+ITERATIVE LL:
+    head stays
+    curr moves
+       ↓
+    you manually manage traversal
+
+
+RECURSIVE LL:
+    head changes between calls
+       ↓
+    call stack remembers previous heads
+       ↓
+    recursion processes the rest
+       ↓
+    current node handles the result
+
+
+Problems:
+Level 1 — Basic recursion
+509. Fibonacci Number ⭐ ✅
+    * Learn base case + recursive call
+    * F(n) = F(n-1) + F(n-2)
+344. Reverse String ⭐ ✅
+    * Recursion with two pointers
+    * Very good for understanding modifying an array in-place
+50. Pow(x, n) ⭐⭐⭐✅
+    * You just solved this one
+    * Teaches divide-and-conquer recursion
+206. Reverse Linked List ⭐⭐ ✅
+    * Recursion on a linked list
+    * No tree involved
+203. Remove Linked List Elements ⭐⭐✅
+    * Good for understanding recursion that returns a modified structure
+
+
+104  Maximum Depth of Binary Tree ✅
+100  Same Tree ✅
+226  Invert Binary Tree✅
+112  Path Sum ✅
+144 Preorder Traversal ✅
+94 Inorder Traversal ✅
+145 Postorder Traversal✅
+       ↓
+Backtracking
+    * Recursion that explores multiple paths
+    * Backtracks to explore other paths
+    * Often used for problems like permutations, combinations, and subsets

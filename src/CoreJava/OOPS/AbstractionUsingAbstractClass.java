@@ -34,6 +34,9 @@ class Car extends Vehicle {
         this.price=price;   //no need of super() as there is no constructor in parent class.
     }
 
+    //In Java, @Override is technically optional whenever you are actually overriding a method.
+    //But highly recommended as it helps compiler to detect mistakes
+
     @Override
     public double cost(int days){
         return days*price;
