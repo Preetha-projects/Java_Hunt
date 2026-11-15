@@ -46,3 +46,21 @@ QUEUE: | Function    | What it does                                 | Example   
        | `peek()`    | Look at the front without removing           | `queue.peek()`    |
        | `isEmpty()` | Check whether queue is empty                 | `queue.isEmpty()` |
        | `size()`    | Number of elements                           | `queue.size()`    |
+
+
+4. When should you use which?
+    Problem requirement	Technique
+    Reverse order / undo operations	        Regular Stack
+    Balanced parentheses	                Regular Stack
+    Next Greater Element	                Monotonic Stack
+    Next Smaller Element	                Monotonic Stack
+    Daily Temperatures	                    Monotonic Stack
+    Largest Rectangle in Histogram	        Monotonic Stack
+
+A monotonic stack is not a different data structure. It is a regular stack with an additional rule: maintain increasing or decreasing order.
+
+    Regular Stack	                 Monotonic Stack
+new ArrayDeque<>()	            new ArrayDeque<>()
+Push directly	                Check before pushing
+No ordering restriction	        Maintains increasing/decreasing order
+General-purpose	                Useful for next greater/smaller problems
