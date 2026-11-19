@@ -1,0 +1,47 @@
+Custom Exception
+----------------
+
+A custom exception is a user-defined exception that extends the Exception class
+
+        class InsufficientBalanceException extends Exception {
+
+            public InsufficientBalanceException(String message) {
+                super(message);
+            }
+        }
+
+extends Exception → Makes our class a checked exception.
+extends RuntimeException → Makes our class an unchecked exception.
+Constructor → Accepts an error message.
+super(message) → Passes that message to the parent Exception class
+
+why super(message) is used in the constructor of a custom exception class:
+Java's parent class already provides functionality to store and retrieve error messages.
+
+A constructor can throw both checked and unchecked exceptions.
+
+
+        class InvalidAgeException extends Exception {
+
+            InvalidAgeException(String message) {
+                super(message);
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+
+                try {
+                    throw new InvalidAgeException("Age must be 18 or above");
+                }
+                catch (InvalidAgeException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
+What happened?
+1. We created an exception with a message.
+2. super(message) passed that message to the parent Exception constructor.
+3. The parent stored the message.
+4. getMessage() retrieved it.

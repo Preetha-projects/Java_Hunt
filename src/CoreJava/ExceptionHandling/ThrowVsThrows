@@ -1,0 +1,10 @@
+Throw vs Throws
+-----------------
+
+throw: Actually creates and throws an exception when something goes wrong.
+
+throws: Warns the caller that this method might pass an exception to it.
+throws doesn't handle the exception. It passes responsibility to the caller.
+
+e represents the caught exception object. e prints the exception's type and message using its toString()
+e.getMessage() retrieves the message stored inside that object.

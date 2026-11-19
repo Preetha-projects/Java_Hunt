@@ -1,0 +1,17 @@
+Checked vs Unchecked Exceptions
+-------------------------------
+
+Checked Exceptions:
+- These are exceptions that are checked at compile-time.
+-If a method can throw a checked exception, Java requires you to either:
+ 1. Handle it using "try-catch", or
+ 2. Declare it using "throws" and pass it to the caller.
+- Examples include `IOException`, `SQLException`, ClassNotFoundException and `FileNotFoundException`.
+
+Unchecked Exceptions: (Runtime)
+- These are exceptions that are not checked at compile-time,
+- They generally occur because of programming mistakes
+- The compiler does not require these exceptions to be caught or declared in the method signature.
+- Examples include `NullPointerException`, `ArrayIndexOutOfBoundsException`, and `ArithmeticException`.
+
+

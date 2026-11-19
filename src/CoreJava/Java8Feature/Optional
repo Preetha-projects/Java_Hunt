@@ -1,0 +1,62 @@
+Optional<T> is a container object introduced in Java 8 that may or may not contain a non-null value
+it helps us handle situations where a value might be missing, reducing the chances of NullPointerException
+
+Important interview points
+1. Optional was introduced in Java 8.
+2. It belongs to the java.util package.
+3. It helps avoid unexpected NullPointerException.
+4. It can contain either a non-null value or be empty.
+5. It is primarily intended as a return type when a result might be absent.
+
+three main methods to create an Optional:
+1. Optional.of()          -  Creates an Optional containing a non-null value
+2. Optional.ofNullable()  -  Creates an Optional that may hold a null value
+3. Optional.empty()       -  Creates an empty Optional instance
+
+Method	           Input	    Result
+of()	           Non-null	    Contains value
+of()	           null	        NPE
+ofNullable()	   Non-null	    Contains value
+ofNullable()	   null	        Empty
+empty()            No input 	Empty
+
+1.  isPresent()         	            ifPresent()
+    Returns boolean	                    Returns void
+    Checks whether value exists	        Executes an action if value exists
+    No arguments	                    Accepts Consumer functional interface.
+    Used for checking               	Used for performing an action
+
+isPresent()
+Checks whether the Optional contains a value.
+- Returns true if a value is present.
+- Returns false if the Optional is empty.
+
+ifPresent() is useful when you want to perform an action only when a value exists, without explicitly checking for null
+
+2.
+orElse()    → evaluates the default argument regardless of whether a value exists.
+orElseGet() → When empty calls a Supplier to generate the default value and evaluates the Supplier only when the Optional is empty.
+orElseThrow() → returns the value if present. If the Optional is empty, it throws an exception.
+
+Method	        If value is present	    If empty
+orElse()	    Returns value	        Returns default
+orElseGet() 	Returns value	        Calls Supplier
+orElseThrow()	Returns value	        Throws exception
+
+ifPresent & OrElseGet are contradictory to each other. ifPresent is used when you want to perform an action only when a value exists,
+while orElseGet is used when you want to provide a default value when the Optional is empty.
+
+3. map() and flatMap() - Both methods are used to transform the value inside an Optional.
+
+    map() transforms a value and wraps the result inside an Optional.
+            Optional<Integer> result =  name.map(value -> Optional.of(value.length()));   // This will create an Optional<Optional<Integer>>
+
+    flatMap() transforms a value when the transformation itself returns an Optional, without creating another nested Optional.
+            Optional<Integer> result = name.flatMap(value -> Optional.of(value.length()));  // This will create an Optional<Integer>
+
+
+4. filter() checks whether the value inside an Optional satisfies a given condition.
+filter() expects a condition that returns a boolean (true or false).
+   - If the condition is true, it keeps the value.
+   - If the condition is false, it returns an empty Optional.
+   - If the Optional is already empty, the condition is not executed.

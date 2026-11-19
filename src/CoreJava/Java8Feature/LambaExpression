@@ -1,0 +1,55 @@
+What is a Lambda Expression?
+----------------------------
+A lambda expression is a concise way of representing an anonymous function (a function without a name).
+A lambda expression is not a method. It is an implementation of the functional interface's single abstract method.
+(parameters) -> { method body }
+
+Lambda expressions work with Functional Interfaces — interfaces that have exactly one abstract method.
+    Examples:
+    - Runnable
+    - Comparator
+    - Predicate
+    - Function
+    - Consumer
+    - Supplier
+
+What is a Functional Interface?
+    A Functional Interface is an interface that contains exactly one abstract method.
+
+    @FunctionalInterface?
+    It is an annotation that tells Java that this interface is intended to have exactly one abstract method
+
+    @FunctionalInterface
+    interface Test {
+        int calculate(int a);
+        int add(int a, int b);  // compile-time error: multiple abstract methods
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+
+            Test t = a -> {
+                System.out.println(a);
+                return a * 2;
+            };
+
+            System.out.println(t.calculate(5)); // method call - Executes implementation.
+        }
+    }
+
+ Functional Interface defines WHAT needs to be done/defines contract. vs Lambda Expression defines HOW to do it.
+
+ Without curly braces:
+ ---------------------
+ Test t = a -> a * 2;  Java automatically returns the expression's result.
+
+ With curly braces:
+  -----------------
+ Test t = a -> {
+     return a * 2;  // must return but no need of return when the functional interface method is void
+ };
+
+ Lambda                                  body	    Return required?
+ a -> a * 2	                             Yes       implicit return
+ a -> { return a * 2; }	                 Yes       explicit return
+ a -> { System.out.println(a); }	     No        void operation

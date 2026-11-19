@@ -1,0 +1,71 @@
+Collectors
+----------
+
+Collectors is a utility class in Java 8
+that provides methods to collect Stream elements into different results, such as Lists, Sets, Maps, Strings, and grouped data
+
+In simple words:
+- Stream processes the data.
+- Collectors helps us store or transform the processed data.
+
+Method	             Purpose
+toList()	        Collect into a List
+toSet()     	    Collect into a Set
+toMap()	            Collect into a Map    Collectors.toMap(keyMapper, valueMapper)
+joining()   	    Join strings          useful method for string manipulation
+groupingBy()	    Group elements
+partitioningBy()	Divide into true/false groups
+counting()      	Count elements
+averagingInt()  	Calculate average
+summarizingInt()	Get statistics
+
+
+toMap() - If duplicate keys exist, This throws IllegalStateException because the key appears twice.
+          Use the third parameter: mergeFunction
+          Example:
+          .collect(Collectors.toMap(
+                          name -> name,
+                          name -> 1,
+                          (oldValue, newValue) -> oldValue + newValue // merge function
+                  ))
+
+joining() concatenates the input elements into a single String. It has three overloaded methods:
+    1. joining() - Without delimiter - JohnAliceBob
+    2. joining(delimiter) - With delimiter(", ") - John, Alice, Bob
+    3. joining(delimiter, prefix, suffix) - With delimiter(", ", "[", "]") - [John, Alice, Bob]
+
+partitioningBy() divides elements of a Stream into two groups based on a condition:
+        - true → elements that satisfy the condition.
+        - false → elements that don't satisfy the condition. It returns a Map<Boolean, List<T>>.
+    - Even if one group has no matching elements, partitioningBy() still returns both Boolean keys.
+
+    Example:
+    Map<Boolean, List<Integer>> partitioned = numbers.stream()
+            .collect(Collectors.partitioningBy(num -> num % 2 == 0));
+    // This will create a map with two entries: true (even numbers) and false (odd numbers).
+
+mapping() applies a transformation to elements before passing them to another Collector.
+    Example:
+    List<String> names = Arrays.asList("John", "Alice", "Bob");
+    List<Integer> nameLengths = names.stream()
+            .collect(Collectors.mapping(
+                            String::length,         // Mapper function
+                            Collectors.toList()));  // Downstream Collector
+    // This will create a list of lengths: [4, 5, 3]
+
+groupingBy() groups stream elements based on a particular property or condition and stores them in a Map - Map<K, List<T>>
+    Example:
+    List<String> names = Arrays.asList("John", "Alice", "Bob", "Charlie", "David");
+    Map<Integer, List<String>> groupedByLength = names.stream()
+            .collect(Collectors.groupingBy(String::length));
+    // This will create a map where the key is the length of the name and the value is a list of names with that length.
+    // Result: {3=[Bob], 4=[John], 5=[Alice, David], 7=[Charlie]}
+
+    Variation	                        Purpose
+    groupingBy()	                    Groups into Lists
+    groupingBy(..., counting())	        Counts elements in each group
+    groupingBy(..., mapping())	        Transforms elements in each group
+    groupingBy(..., summingInt())	    Calculates sum in each group
+    groupingBy(..., averagingInt()) 	Calculates average in each group
+
+summingInt() is a downstream collector that calculates the sum of integer values in each group

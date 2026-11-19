@@ -1,0 +1,85 @@
+Built-in Functional Interfaces
+
+Interface	        Purpose         	Method
+Predicate<T>	Tests a condition	    test()
+Function<T,R>	Transforms a value	    apply()
+Consumer<T>	    Consumes a value	    accept()
+Supplier<T>	    Supplies a value	    get()
+
+1. Predicate - A Predicate is a functional interface that takes an input and returns a boolean (true or false).
+
+            import java.util.function.Predicate;
+
+            public class Main {
+                public static void main(String[] args) {
+
+                    Predicate<Integer> isEven = n -> n % 2 == 0;
+
+                    System.out.println(isEven.test(10));  // abstract method is test()
+                    System.out.println(isEven.test(7));
+                }
+            }
+
+2. Function - A Function takes an input, performs some operation, and returns an output. It can return any type.
+
+            import java.util.function.Function;
+
+            public class Main {
+                public static void main(String[] args) {
+
+                    Function<Integer, Integer> multiply = n -> n * 2;
+
+                    System.out.println(multiply.apply(5));  // abstract method is apply()
+                }
+            }
+
+3. Consumer - A Consumer takes an input and performs some operation on it, but does not return any output.
+
+            import java.util.function.Consumer;
+
+            public class Main {
+                public static void main(String[] args) {
+
+                    Consumer<String> print = s -> System.out.println(s);
+
+                    print.accept("Hello, World!");  // abstract method is accept()
+                }
+            }
+
+    - forEach() is a method that accepts a Consumer as an argument and applies an operation to each collection element
+
+    - andThen() In Java 8, Consumer provides a default method To execute two Consumer operations one after another on the same input.
+
+        Consumer<String> c1 = name -> System.out.println("Hello " + name);
+        Consumer<String> c2 = name -> System.out.println("Welcome " + name);
+
+        c1.andThen(c2).accept("Java");
+
+    andThen() executes the second Consumer only after the first completes successfully. If the first throws an exception, the second won't execute
+
+        Method	        Functional interface
+        List.forEach()	    Consumer
+        Map.forEach()	    BiConsumer  ~ BiConsumer<T, U> → accepts two inputs.
+
+4. Supplier - A Supplier takes no input but returns a value. Example: Generate a random number, Return a username.
+
+            import java.util.function.Supplier;
+
+            public class Main {
+                public static void main(String[] args) {
+
+                    Supplier<Double> randomValue = () -> Math.random();
+
+                    System.out.println(randomValue.get());  // abstract method is get()
+                }
+            }
+
+UnaryOperator vs BinaryOperator
+ Both are special cases of Function interface. They are used when the input and output types are the same.
+
+    Interface	             Purpose
+    ---------------------------------
+    Function	        One input, potentially different output type
+    UnaryOperator	    One input, same output type
+    BiFunction	        Two inputs, potentially different output type
+    BinaryOperator      Two inputs, same output type

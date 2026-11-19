@@ -3,7 +3,7 @@ Exception Handling
 
 An exception is:
 
-An unwanted event that occurs during program execution and disrupts normal flow.
+An unexpected event that occurs during program execution and disrupts normal flow.
 
 Program crashes immediately without Exception Handling.
 
@@ -13,6 +13,7 @@ To:
     prevent abrupt termination
     continue program execution
     handle errors gracefully
+    Help with debugging and logging.
 
 
     try {
@@ -28,6 +29,8 @@ To:
                         database connections
                         cleanup code
                         releasing resources
+        // finally may not execute when JVM crashes or JWM terminates before that
+        Avoid writing "return" inside finally. It can suppress exceptions and override previously returned values.
     }
 
 

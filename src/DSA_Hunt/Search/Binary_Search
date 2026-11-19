@@ -35,3 +35,8 @@ Patterns:
       7   | Rotated Array       | Modified binary search  |
       8  | Peak Problems       | Binary search on trend  |
       9 | Infinite Array      | Expand + binary search  |
+
+
+Pattern	Loop	            Valid condition
+Find maximum valid answer	left <= right	left = mid + 1    Use left <= right — Classic Binary Search
+Find minimum valid answer	left < right	right = mid       Use left < right — Lower Bound / Binary Search on Answer

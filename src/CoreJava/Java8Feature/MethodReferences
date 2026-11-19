@@ -1,0 +1,25 @@
+Method References (::)
+----------------------
+
+A method reference is a shorter way of writing a lambda expression when the lambda simply calls an existing method
+
+Using Lambda: `x -> x.toUpperCase()`
+Using Method Reference: `String::toUpperCase`
+
+There are four main types:
+Type	                                Example
+Static method reference	                ClassName::staticMethod
+Instance method reference           	object::instanceMethod
+Instance method of an arbitrary object	ClassName::instanceMethod
+Constructor reference	                ClassName::new
+
+
+Lambda              	        Method Reference
+Uses ->	Uses                     ::
+Can contain logic	            Refers to an existing method
+More flexible	                Shorter and cleaner
+Can call multiple methods	    Usually delegates to one method
+
+
+Every lambda expression cannot be converted into a method reference.
+A lambda can be converted into a method reference only when it simply calls an existing method or constructor and the method reference matches the required functional interface

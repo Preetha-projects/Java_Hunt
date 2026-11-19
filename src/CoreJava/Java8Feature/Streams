@@ -1,0 +1,47 @@
+Streams:
+
+Stream in Java was introduced in Java 8 to simplify the processing of collections and data
+
+        numbers.stream()
+               .filter(num -> num > 20)
+               .map(num -> num * 2)
+               .collect(Collectors.toList());
+
+Operation	Purpose
+stream()	Creates a stream from the collection
+filter()	Selects elements based on a condition
+map()	    Transforms each element
+collect()	Collects the result into a list
+
+
+Intermediate vs Terminal Operations
+
+Intermediate operations
+- Return another Stream.
+- Can be chained together.
+- Examples: filter(), map(), sorted(), distinct().
+
+Terminal operations
+- End the stream pipeline.
+- Produce a result or perform an action.
+- Examples: collect(), forEach(), count(), reduce().
+
+
+Two types of intermediate operations: Stateless and Stateful
+
+Stateless	                                         Stateful
+---------------------------------------------------------------------------
+Processes elements independently	         Considers multiple elements
+Doesn't need previous elements	             May need to remember elements
+Usually doesn't need to buffer the stream	 May need buffering
+filter(), map()	                             sorted(), distinct()
+
+Lazy evaluation means Java does not execute intermediate Stream operations immediately. It waits until a terminal operation is called
+
+reduce() is used to combine all elements in a Stream into a single result.
+Where do we use reduce()?
+Common use cases:
+- Sum of numbers.
+- Product of numbers.
+- Finding maximum or minimum.
+- Combining values into one result.

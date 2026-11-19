@@ -1,0 +1,48 @@
+1. flatMap() transforms each element into a stream and combines all those streams into one single flattened stream.
+
+        List<List<String>> subjects = Arrays.asList(
+            Arrays.asList("Java", "Spring"),
+            Arrays.asList("SQL", "Python"),
+            Arrays.asList("React", "JavaScript")
+        );
+
+        List<String> result = subjects.stream()
+            .flatMap(list -> list.stream())    // accepts a Function functional interface, list : input (T), list.stream() : output (Stream<R>)
+            .collect(Collectors.toList());
+
+        System.out.println(result);    // [Java, Spring, SQL, Python, React, JavaScript]
+
+
+2. count() returns the total number of elements in a Stream. Return type is long.
+
+                List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+
+                long count = numbers.stream()
+                                    .count();
+
+                System.out.println(count); // 5
+
+
+3. limit() restricts a Stream to a maximum number of elements or short-circuiting intermediate operation that returns at most the first n elements
+
+4. findFirst() returns the first element of a Stream as an Optional. Return type: Optional<T>
+               is a short-circuiting terminal operation that returns the first element wrapped in an Optional.
+
+    Why does it return Optional?
+    Because the Stream might be empty. Instead of returning null, Java returns an Optional that may or may not contain a value.
+
+5. findAny() returns any one element from a Stream as an Optional, without guaranteeing which element is selected. Return type: Optional<T>
+               is a short-circuiting terminal operation that returns any element wrapped in an Optional.
+
+    Why does it return Optional?
+    Because the Stream might be empty. Instead of returning null, Java returns an Optional that may or may not contain a value.
+
+    Method	             Meaning
+6. anyMatch()	    At least one matches
+7. allMatch()	    Every element matches
+8. noneMatch()	    No element matches
+
+All three:
+- Return boolean.
+- Are terminal operations.
+- Are short-circuiting operations.
